@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tripify | Куда поехать?</title>
+    <title>Результаты теста | Tripify</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,134 +12,58 @@
 </head>
 <body>
     <!-- Навигация -->
-    <nav class="navbar" role="navigation" aria-label="Основная навигация">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-compass" aria-hidden="true"></i>
-                <span>Tripify</span>
+                <i class="fas fa-compass"></i>
+                <a href="index.html" style="color: inherit; text-decoration: none;">
+                    <span>Tripify</span>
+                </a>
             </div>
-            <ul class="nav-menu" role="menubar">
-                <li role="none"><a href="#home" class="nav-link" role="menuitem">Главная</a></li>
-                <li role="none"><a href="#about" class="nav-link" role="menuitem">О сервисе</a></li>
-                <li role="none"><a href="#join" class="nav-link" role="menuitem">Выбрать путешествие</a></li>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Главная</a></li>
+                <li><a href="index.html#about" class="nav-link">О сервисе</a></li>
+                <li><a href="index.html#join" class="nav-link">Выбрать путешествие</a></li>
             </ul>
             <div class="theme-toggle">
-                <button id="theme-toggle" aria-label="Переключить тему" aria-pressed="false">
-                    <i class="fas fa-moon" aria-hidden="true"></i>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
-            <button class="hamburger" aria-label="Открыть меню" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Геройская секция -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span>Главный помощник в путешествиях</span>
-            </div>
-            <h1 class="hero-title">
-                Не знаете куда отправиться? 
-                <span class="gradient-text">Tripify поможет!</span>
-            </h1>
-            <p class="hero-subtitle">
-                Лучший сайт для тех, кто не знает куда поехать!
-                А также здесь вы можете найти интересные места своего региона!
-            </p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-count="24">0</span>
-                    <span class="stat-label">Республик</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-count="9">0</span>
-                    <span class="stat-label">Краёв</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-count="48">0</span>
-                    <span class="stat-label">Областей</span>
-                </div>
-            </div>
-            <a href="#" class="cta-button" target="_blank">
-                <i class="fas fa-plane"></i>
-                <span>Вперёд в путешествие!</span>
-                <div class="button-glow"></div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Секция о нас -->
-    <section id="about" class="about-section">
+    <!-- Секция результатов -->
+    <section class="results-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">О нашем сервисе</h2>
-                <p class="section-subtitle">Узнайте больше о том, что делает нас особенными</p>
+            <div class="results-header">
+                <h1 class="results-title">Ваши рекомендации</h1>
+                <p class="results-subtitle">На основе ваших ответов мы подобрали идеальные места для путешествия</p>
             </div>
-            
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h3>Обширная база</h3>
-                    <p>Более 1000 интересных, а также красивых мест для отдыха!</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Отзывы</h3>
-                    <p>На сайте представлены отзывы людей, которые посещали интересные места!</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3>Билеты/Бронирование</h3>
-                    <p>Поможем вам найти Авиа/ЖД билеты! А также забронировать отель!</p>
-                </div>
+
+            <div class="quiz-summary">
+                <h2>Ваши предпочтения</h2>
+                <div id="quiz-summary-content"></div>
             </div>
-        </div>
-    </section>
 
+            <div class="recommendations-grid" id="recommendations-grid">
+                <!-- Recommendations will be populated by JavaScript -->
+            </div>
 
-    <!-- Секция присоединения -->
-    <section id="join" class="join-section">
-        <div class="container">
-            <div class="join-content">
-                <h2 class="join-title">Готовы выбрать место?</h2>
-                <p class="join-subtitle">
-                    Пройдите тест, с помощью которого вы сможете найти интересные места
-                </p>
-                
-                <div class="join-benefits">
-                    <div class="benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Множество красивых и интересных мест</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Подробная информация о местах, фотографии, отзывы</span>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Новые знакомства и друзья</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="join-button" target="_blank">
-                    <i class="fas fa-plane"></i>
-                    <span>Вперёд в путешествие!</span>
-                    <div class="button-glow"></div>
+            <div class="results-actions">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Вернуться на главную
                 </a>
+                <button class="retake-btn" onclick="retakeQuiz()">
+                    <i class="fas fa-redo"></i>
+                    Пройти тест заново
+                </button>
             </div>
         </div>
     </section>
@@ -152,16 +76,16 @@
                     <h3>Tripify</h3>
                     <p>Главный помощник в путешествиях</p>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Путеводитель по сайту</h4>
                     <ul>
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#about">О сервисе</a></li>
-                        <li><a href="#join">Выбрать путешествие</a></li>
+                        <li><a href="index.html#home">Главная</a></li>
+                        <li><a href="index.html#about">О сервисе</a></li>
+                        <li><a href="index.html#join">Выбрать путешествие</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Социальные сети</h4>
                 <div class="social-links">
@@ -173,7 +97,7 @@
                     </a>
                 </div>
                 </div>
-                
+
                 <div class="footer-bottom">
                     <p>&copy; 2025 Tripify. Все права защищены.</p>
                 </div>
@@ -182,17 +106,17 @@
     </footer>
 
     <!-- Модальное окно теста -->
-    <div id="quiz-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" aria-hidden="true">
+    <div id="quiz-modal" class="modal">
         <div class="modal-content">
-            <button class="close" aria-label="Закрыть модальное окно">&times;</button>
+            <span class="close">&times;</span>
 
             <!-- Шаг 1: Регион -->
             <div class="step" id="step-1">
-                <h2 id="modal-title">Выберите ваш регион</h2>
+                <h2>Выберите ваш регион</h2>
                 <p>Укажите область, край или республику, где вы проживаете</p>
 <div class="region-select-container">
-    <input type="text" id="region-select" name="region-select" placeholder="Введите название региона" autocomplete="off" class="region-select-input" aria-label="Выберите регион" aria-expanded="false" aria-haspopup="listbox" role="combobox" />
-    <div class="region-dropdown" id="region-dropdown" role="listbox" aria-label="Список регионов">
+    <input type="text" id="region-select" name="region-select" placeholder="Введите название региона" autocomplete="off" class="region-select-input" />
+    <div class="region-dropdown" id="region-dropdown">
         <div class="region-option" data-value="bashkortostan">🏛️ Башкортостан</div>
         <div class="region-option" data-value="buryatia">🏔️ Бурятия</div>
         <div class="region-option" data-value="dagestan">🏔️ Дагестан</div>
@@ -321,6 +245,7 @@
     </div>
 
     <!-- Скрипты -->
+    <script src="results.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
